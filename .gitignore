@@ -8,7 +8,8 @@ node_modules
 /cypress/videos
 /prisma/data.db
 /prisma/data.db-journal
+/prisma/seed.ts
+
 
 /app/styles/tailwind.css
 
-prisma/seed.ts
