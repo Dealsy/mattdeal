@@ -1,7 +1,7 @@
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import clsx from "clsx";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { getPosts } from "~/models/post.server";
 import { useOptionalAdminUser } from "~/utils";
@@ -20,6 +20,10 @@ export const loader = async () => {
 
 export default function Posts() {
   const [search, setSearch] = useState("");
+  const [catSearch, setCatSearch] = useState("All categories");
+
+  console.log(catSearch);
+
   // @ts-ignore
   const { posts } = useLoaderData() as LoaderData;
   const adminUser = useOptionalAdminUser();
@@ -27,18 +31,27 @@ export default function Posts() {
   const categories = posts.map((post) => post.category);
   const uniqueCategories = [...new Set(categories)];
 
-  //  TODO - create search for Categories based on selected Category
-
   const debouncedSearch = useDebounce(search, 200);
-
   const termSearch =
     debouncedSearch === ""
       ? posts
-      : posts.filter((post) =>
-          post.title.toLowerCase().includes(search.toLowerCase())
+      : posts.filter((post: any) =>
+          post.title.toString().toLowerCase().includes(search.toLowerCase())
         );
 
-  //  TODO - create combined search for both Title and Category
+  const selectedValue = (priorityValue: string) => {
+    setCatSearch(priorityValue);
+  };
+
+  const combinedFilter = useMemo(() => {
+    return termSearch.filter((post: any) => {
+      if (catSearch === "All categories") {
+        return termSearch;
+      } else if (post.category === catSearch) {
+        return post.category;
+      }
+    });
+  }, [termSearch, catSearch]);
 
   return (
     <main className="flex flex-col p-14 dark:bg-gray-700">
@@ -78,7 +91,9 @@ export default function Posts() {
           <select
             className="rounded-lg border-2 border-gray-800 p-2"
             id="select"
+            onChange={(e) => selectedValue(e.target.value)}
           >
+            <option value="All categories"> All categories </option>
             {uniqueCategories.map((category) => {
               return (
                 <option value={category} key={category}>
@@ -90,7 +105,7 @@ export default function Posts() {
         </div>
       </div>
       <div className="flex flex-row flex-wrap p-10">
-        {termSearch.map((post) => (
+        {combinedFilter.map((post) => (
           <Link key={post.slug} to={post.slug} prefetch="intent">
             <div
               className={clsx(

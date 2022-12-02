@@ -12,22 +12,18 @@ import {
 } from "@remix-run/react";
 
 import tailwindStylesheetUrl from "./styles/tailwind.css";
-import styles from "./styles/styles.css";
 import { getUser } from "./session.server";
 import clsx from "clsx";
 import Nav from "./components/nav";
 import { getEnv } from "./env.server";
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: "stylesheet", href: tailwindStylesheetUrl },
-    { rel: "stylesheet", href: styles },
-  ];
+  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
 };
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Remix Notes",
+  title: "Mattdeal.com.au",
   viewport: "width=device-width,initial-scale=1",
 });
 
