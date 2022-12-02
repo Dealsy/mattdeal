@@ -38,7 +38,7 @@ export default function Nav() {
           className={clsx(
             "rounded-md bg-discord p-2 text-white",
             "hover:scale-105 hover:bg-dropbox",
-            "dark:bg-yellow-500"
+            "dark:bg-amazon dark:hover:bg-yellow-500"
           )}
           onClick={toggleTheme}
         />

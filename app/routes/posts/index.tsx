@@ -60,8 +60,8 @@ export default function Posts() {
           to="admin"
           className={clsx(
             "m-auto flex w-32 justify-center rounded-md border-discord bg-discord p-2 text-xl font-medium text-white",
-            "hover:scale-110 hover:bg-dropbox dark:hover:bg-yellow-600",
-            "dark:border-yellow-500 dark:bg-yellow-500"
+            "hover:scale-110 hover:bg-dropbox dark:hover:bg-yellow-500",
+            "dark:border-yellow-500 dark:bg-amazon "
           )}
         >
           Admin
@@ -109,7 +109,7 @@ export default function Posts() {
           <Link key={post.slug} to={post.slug} prefetch="intent">
             <div
               className={clsx(
-                "m-10 flex h-96 w-64 flex-col rounded-lg border-4 border-discord hover:border-dropbox dark:border-yellow-500",
+                "m-10 flex h-96 w-64 flex-col rounded-lg border-4 border-discord hover:border-dropbox dark:border-amazon",
                 "relative shadow-xl",
                 "hover:scale-125 hover:shadow-2xl dark:hover:border-yellow-500"
               )}
