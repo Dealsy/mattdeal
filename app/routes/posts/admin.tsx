@@ -2,8 +2,6 @@ import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData, Outlet, useTransition } from "@remix-run/react";
 import clsx from "clsx";
-import CloudinaryUpload from "~/routes/posts/admin/cloudinary-upload";
-import LocalUpload from "~/components/upload/local-upload";
 
 import { getPosts } from "~/models/post.server";
 import { requireAdminUser } from "~/session.server";
