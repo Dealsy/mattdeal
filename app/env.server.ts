@@ -10,7 +10,7 @@ export function getEnv() {
 type ENV = ReturnType<typeof getEnv>;
 
 declare global {
-  var ENV: string;
+  var ENV: ENV;
   interface Window {
     ENV: ENV;
   }
