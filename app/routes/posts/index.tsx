@@ -117,7 +117,12 @@ export default function Posts() {
               <h3 className="flex justify-center p-5 text-2xl dark:text-white">
                 {post.title}
               </h3>
-              <p className="flex justify-start pl-2">
+              <p
+                className={clsx(
+                  "flex justify-start pl-2 text-gray-500",
+                  "dark:text-gray-400"
+                )}
+              >
                 category: {post.category}
               </p>
 
