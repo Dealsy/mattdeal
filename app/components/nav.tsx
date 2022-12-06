@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Form, Link } from "@remix-run/react";
 import clsx from "clsx";
 import { useOptionalUser } from "~/utils";
 import { Theme, useTheme } from "../../utils/theme-provider";
@@ -33,6 +33,7 @@ export default function Nav() {
         <li>
           <Link to="/about">About</Link>
         </li>
+
         <Button
           text={themeToggole ? "Light" : "Dark"}
           className={clsx(
@@ -42,6 +43,26 @@ export default function Nav() {
           )}
           onClick={toggleTheme}
         />
+        {user ? (
+          ""
+        ) : (
+          <>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+
+            <li>
+              <Link to="/join">Sign up</Link>
+            </li>
+          </>
+        )}
+        {user ? (
+          <Form action="/logout" method="post">
+            <button type="submit" className="">
+              Logout
+            </button>
+          </Form>
+        ) : null}
       </ul>
     </nav>
   );
