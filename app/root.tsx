@@ -37,6 +37,11 @@ export async function loader({ request }: LoaderArgs) {
 function App() {
   const data = useLoaderData();
   const [theme] = useTheme();
+
+  if (!theme) {
+    return <div> loading.. </div>;
+  }
+
   return (
     <html lang="en" className={clsx(theme, "h-full")}>
       <head>

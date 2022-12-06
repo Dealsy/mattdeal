@@ -13,7 +13,7 @@ module.exports = {
     require("tailwindcss-brand-colors"),
     plugin(function ({ addBase, theme }) {
       addBase({
-        h1: { fontSize: theme("fontSize.4xl") },
+        h1: { fontSize: theme("fontSize.6xl") },
         h2: { fontSize: theme("fontSize.1xl") },
         h3: { fontSize: theme("fontSize.xl") },
       });
