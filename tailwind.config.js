@@ -14,7 +14,7 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: { fontSize: theme("fontSize.6xl") },
-        h2: { fontSize: theme("fontSize.1xl") },
+        h2: { fontSize: theme("fontSize.3xl") },
         h3: { fontSize: theme("fontSize.xl") },
       });
     }),

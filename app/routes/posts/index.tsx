@@ -105,7 +105,7 @@ export default function Posts() {
         </div>
       </div>
       <div className="flex flex-row flex-wrap p-10">
-        {combinedFilter.map((post) => (
+        {[...combinedFilter].reverse().map((post) => (
           <Link key={post.slug} to={post.slug} prefetch="intent">
             <div
               className={clsx(
