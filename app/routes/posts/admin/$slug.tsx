@@ -104,10 +104,14 @@ export default function NewPostRoute() {
   const isNewPost = !data.post;
 
   return (
-    <>
-      <Form className="mb-10" method="post" key={data.post?.slug ?? "new"}>
+    <div className="mb-10 bg-linkedin p-5 dark:bg-gray-600">
+      <Form
+        className="flex flex-col gap-5"
+        method="post"
+        key={data.post?.slug ?? "new"}
+      >
         <p>
-          <label className="dark:text-white">
+          <label className="text-xl text-white">
             Post Title:
             {errors?.title ? (
               <em className="text-red-600">{errors.title}</em>
@@ -121,7 +125,7 @@ export default function NewPostRoute() {
           </label>
         </p>
         <p>
-          <label className="dark:text-white">
+          <label className="text-xl text-white">
             Post Slug:{" "}
             {errors?.slug ? (
               <em className="text-red-600">{errors.slug}</em>
@@ -135,7 +139,7 @@ export default function NewPostRoute() {
           </label>
         </p>
         <p>
-          <label className="dark:text-white">
+          <label className="text-xl text-white">
             Category:
             {errors?.category ? (
               <em className="text-red-600">{errors.category}</em>
@@ -149,7 +153,7 @@ export default function NewPostRoute() {
           </label>
         </p>
         <p>
-          <label htmlFor="markdown" className="dark:text-white">
+          <label htmlFor="markdown" className="text-xl text-white">
             Markdown:{" "}
             {errors?.markdown ? (
               <em className="text-red-600">{errors.markdown}</em>
@@ -157,14 +161,14 @@ export default function NewPostRoute() {
           </label>
           <textarea
             id="markdown"
-            rows={20}
+            rows={7}
             name="markdown"
             className={`${inputClassName} font-mono`}
             defaultValue={data.post?.markdown}
           />
         </p>
         <p>
-          <label className="dark:text-white">
+          <label className="text-xl text-white">
             Image:
             {errors?.image ? (
               <em className="text-red-600">{errors.image}</em>
@@ -194,7 +198,10 @@ export default function NewPostRoute() {
             type="submit"
             name="intent"
             value={isNewPost ? "create" : "update"}
-            className="rounded bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400 disabled:bg-blue-300"
+            className={clsx(
+              "rounded py-2 px-4 text-white disabled:bg-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:bg-blue-400",
+              "bg-feedly hover:bg-spotify focus:bg-spotify "
+            )}
             disabled={isCreating || isUpdating}
           >
             {isNewPost ? (isCreating ? "Creating..." : "Create Post") : null}
@@ -202,7 +209,7 @@ export default function NewPostRoute() {
           </button>
         </div>
       </Form>
-    </>
+    </div>
   );
 }
 

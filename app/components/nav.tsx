@@ -20,13 +20,24 @@ export default function Nav() {
   return (
     <nav
       className={clsx(
-        "flex flex-row items-center justify-between border-b-2 border-discord",
+        "sticky top-0 z-10 flex flex-row items-center justify-between border-b-2 border-discord bg-white",
         "p-6 dark:border-yellow-500 dark:bg-gray-700 dark:text-white"
       )}
     >
-      <Link to="/" className="text-2xl font-bold">
-        {user ? user.email : "Mattdeal.com.au"}
-      </Link>
+      <div className="flex flex-row gap-5">
+        <Link to="/" className="text-2xl font-bold">
+          {user ? user.email : "Mattdeal.com.au"}
+        </Link>
+        <Button
+          text={themeToggole ? "Light" : "Dark"}
+          className={clsx(
+            "rounded-md bg-discord p-2 text-white",
+            "hover:scale-105 hover:bg-dropbox",
+            "dark:bg-amazon dark:hover:bg-yellow-500"
+          )}
+          onClick={toggleTheme}
+        />
+      </div>
       <ul className="flex flex-row space-x-4">
         {admin ? (
           <li>
@@ -41,15 +52,6 @@ export default function Nav() {
           <Link to="/about">About</Link>
         </li>
 
-        <Button
-          text={themeToggole ? "Light" : "Dark"}
-          className={clsx(
-            "rounded-md bg-discord p-2 text-white",
-            "hover:scale-105 hover:bg-dropbox",
-            "dark:bg-amazon dark:hover:bg-yellow-500"
-          )}
-          onClick={toggleTheme}
-        />
         {user ? (
           ""
         ) : (

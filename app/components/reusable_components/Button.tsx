@@ -25,8 +25,11 @@ export default function Button({
   leftStyle,
 }: ButtonProps) {
   return (
-    <div className={clsx(UpperDiveClassName || "flex justify-center")}>
-      <button onClick={onClick} className={clsx(className)}>
+    <div className={clsx(UpperDiveClassName || "flex justify-center ")}>
+      <button
+        onClick={onClick}
+        className={clsx(className, "bg-discord text-white dark:bg-amazon")}
+      >
         {LeftIcon && <LeftIcon className={clsx(leftStyle || "mr-2 h-5")} />}
         {text}
         {RightIcon && <RightIcon className={clsx(rightStyle || "ml-2 h-4")} />}

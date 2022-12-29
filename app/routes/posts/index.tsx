@@ -62,7 +62,7 @@ export default function Posts() {
           className={clsx(
             "m-auto flex w-32 justify-center rounded-md border-discord bg-discord p-2 text-xl font-medium text-white",
             "hover:scale-110 hover:bg-dropbox dark:hover:bg-yellow-500",
-            "dark:border-yellow-500 dark:bg-amazon "
+            "dark:border-yellow-500 dark:bg-amazon"
           )}
         >
           Admin

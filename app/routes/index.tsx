@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import { getPosts } from "~/models/post.server";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import Button from "~/components/reusable_components/Button";
 import Card from "~/components/reusable_components/card";
 
@@ -29,7 +29,7 @@ export default function Index() {
     >
       <h1
         className={clsx(
-          "pt-14 text-7xl leading-[6rem] text-gray-800",
+          "pt-14 text-7xl font-semibold leading-[6rem] text-gray-700",
           "font-medium dark:text-white"
         )}
       >

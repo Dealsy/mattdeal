@@ -48,7 +48,7 @@ function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full dark:bg-gray-700">
+      <body className="h-full bg-gray-50 dark:bg-gray-700">
         <Nav />
         <Outlet />
         <ScrollRestoration />
