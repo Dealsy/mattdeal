@@ -40,6 +40,7 @@ type ActionData =
       slug: null | string;
       markdown: null | string;
       category: null | string;
+      image: null | string;
     }
   | undefined;
 
@@ -58,12 +59,14 @@ export const action: ActionFunction = async ({ request, params }) => {
   const slug = formData.get("slug");
   const markdown = formData.get("markdown");
   const category = formData.get("category");
+  const image = formData.get("image");
 
   const errors: ActionData = {
     title: title ? null : "Title is required",
     slug: slug ? null : "Slug is required",
     markdown: markdown ? null : "Markdown is required",
     category: category ? null : "Category is required",
+    image: image ? null : "image is required",
   };
   const hasErrors = Object.values(errors).some((errorMessage) => errorMessage);
   if (hasErrors) {
@@ -74,11 +77,12 @@ export const action: ActionFunction = async ({ request, params }) => {
   invariant(typeof slug === "string", "slug must be a string");
   invariant(typeof markdown === "string", "markdown must be a string");
   invariant(typeof category === "string", "category must be a string");
+  invariant(typeof image === "string", "category must be a string");
 
   if (params.slug === "new") {
-    await createPost({ title, slug, markdown, category });
+    await createPost({ title, slug, markdown, category, image });
   } else {
-    await updatePost(params.slug, { title, slug, markdown, category });
+    await updatePost(params.slug, { title, slug, markdown, category, image });
   }
 
   return redirect("/posts/admin");
@@ -158,6 +162,20 @@ export default function NewPostRoute() {
             className={`${inputClassName} font-mono`}
             defaultValue={data.post?.markdown}
           />
+        </p>
+        <p>
+          <label className="dark:text-white">
+            Image:
+            {errors?.image ? (
+              <em className="text-red-600">{errors.image}</em>
+            ) : null}
+            <input
+              type="text"
+              name="image"
+              className={clsx(inputClassName)}
+              defaultValue={data.post?.image}
+            />
+          </label>
         </p>
 
         <div className="flex justify-end gap-4">

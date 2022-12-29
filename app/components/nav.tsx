@@ -1,11 +1,12 @@
 import { Form, Link } from "@remix-run/react";
 import clsx from "clsx";
-import { useOptionalUser } from "~/utils";
+import { useOptionalAdminUser, useOptionalUser } from "~/utils";
 import { Theme, useTheme } from "../../utils/theme-provider";
 import Button from "./reusable_components/Button";
 
 export default function Nav() {
   const user = useOptionalUser();
+  const admin = useOptionalAdminUser();
   const [theme, setTheme] = useTheme();
 
   const themeToggole = theme === Theme.LIGHT;
@@ -27,6 +28,12 @@ export default function Nav() {
         {user ? user.email : "Mattdeal.com.au"}
       </Link>
       <ul className="flex flex-row space-x-4">
+        {admin ? (
+          <li>
+            <Link to={"/posts/admin"}>Admin</Link>
+          </li>
+        ) : null}
+
         <li>
           <Link to="/posts">Blog</Link>
         </li>

@@ -51,9 +51,11 @@ async function seed() {
       markdown: `
   # This is my first post
   
+  
   Isn't it great?
       `.trim(),
     },
+    image: "https://source.unsplash.com/random/800x600",
     {
       slug: "90s-mixtape",
       title: "A Mixtape I Made Just For You",
@@ -81,6 +83,7 @@ async function seed() {
   - C'mon N' Ride it (Quad City DJ's)
       `.trim(),
     },
+    image: "https://source.unsplash.com/random/800x600",
   ];
 
   for (const post of posts) {

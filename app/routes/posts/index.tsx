@@ -1,3 +1,4 @@
+import Card from "../../components/reusable_components/card";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import clsx from "clsx";
@@ -106,36 +107,7 @@ export default function Posts() {
       </div>
       <div className="flex flex-row flex-wrap p-10">
         {[...combinedFilter].reverse().map((post) => (
-          <Link key={post.slug} to={post.slug} prefetch="intent">
-            <div
-              className={clsx(
-                "m-10 flex h-96 w-64 flex-col rounded-lg border-4 border-discord hover:border-dropbox dark:border-amazon",
-                "relative shadow-xl",
-                "hover:scale-125 hover:shadow-2xl dark:hover:border-yellow-500"
-              )}
-            >
-              <h3 className="flex justify-center p-5 text-2xl dark:text-white">
-                {post.title}
-              </h3>
-              <p
-                className={clsx(
-                  "flex justify-start pl-2 text-gray-500",
-                  "dark:text-gray-400"
-                )}
-              >
-                category: {post.category}
-              </p>
-
-              <div
-                className={clsx(
-                  "absolute bottom-[0px] right-0 w-[16] rounded-b-[4px] bg-gray-800 p-6 text-white opacity-80",
-                  "opacity-80 dark:font-medium"
-                )}
-              >
-                {post.markdown.slice(0, 60)}...
-              </div>
-            </div>
-          </Link>
+          <Card key={post.slug} post={post} />
         ))}
       </div>
     </main>
