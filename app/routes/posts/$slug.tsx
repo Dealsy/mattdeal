@@ -40,19 +40,11 @@ export default function PostSlug() {
   // @ts-ignore
   const { post, html } = useLoaderData() as LoaderData;
 
-  const words = html.split(" ").length;
-  const readingTime = Math.max(1, Math.ceil(words / 200));
-
-  console.log("readingTime", readingTime);
-
   return (
     <main className="mx-auto max-w-4xl py-20">
       <h1 className="my-6 border-b-2 text-center text-7xl font-bold dark:text-white">
         {post.title}
       </h1>
-      <p className="font-medium text-gray-700 dark:text-white ">
-        Read Time: {readingTime} {readingTime === 1 ? "minute" : "minutes"}
-      </p>
 
       <div
         className="prose prose-2xl dark:prose-invert"

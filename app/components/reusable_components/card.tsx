@@ -7,6 +7,8 @@ export default function Card({ post }: { post: any }) {
   const location = useLocation();
 
   const words = post.markdown.split(" ").length;
+
+  console.log("words", words);
   const readingTime = Math.max(1, Math.ceil(words / 200));
 
   return (
