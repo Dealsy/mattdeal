@@ -55,7 +55,7 @@ export default function PostSlug() {
       </p>
 
       <div
-        className="prose prose-xl p-2 dark:prose-invert"
+        className="prose prose-2xl dark:prose-invert"
         id="mark"
         dangerouslySetInnerHTML={{ __html: html }}
       />
