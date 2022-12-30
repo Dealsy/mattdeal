@@ -16,9 +16,16 @@ import { getUser } from "./session.server";
 import clsx from "clsx";
 import Nav from "./components/nav";
 import { getEnv } from "./env.server";
+import Footer from "./components/footer";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
+  return [
+    { rel: "stylesheet", href: tailwindStylesheetUrl },
+    {
+      rel: "stylesheet",
+      href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/material.min.css",
+    },
+  ];
 };
 
 export const meta: MetaFunction = () => ({
@@ -51,6 +58,7 @@ function App() {
       <body className="h-full bg-gray-50 dark:bg-gray-700">
         <Nav />
         <Outlet />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <script

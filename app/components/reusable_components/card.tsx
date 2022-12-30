@@ -6,6 +6,9 @@ import { useLocation } from "@remix-run/react";
 export default function Card({ post }: { post: any }) {
   const location = useLocation();
 
+  const words = post.markdown.split(" ").length;
+  const readingTime = Math.max(1, Math.ceil(words / 200));
+
   return (
     <Link
       key={post.slug}
@@ -32,10 +35,14 @@ export default function Card({ post }: { post: any }) {
           <h3 className="flex  justify-center p-5 text-4xl font-semibold text-white">
             {post.title}
           </h3>
-
-          <p className="pl-4 pb-2 text-base font-medium text-white">
-            category: {post.category}
-          </p>
+          <div className="flex flex-row gap-16">
+            <p className="pl-4 pb-2 text-base font-medium text-white">
+              category: {post.category}
+            </p>
+            <p className="text-base font-medium text-white">
+              {readingTime} minute read
+            </p>
+          </div>
         </div>
 
         <div
