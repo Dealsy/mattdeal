@@ -7,6 +7,8 @@ import hljs from "highlight.js";
 import "highlight.js/styles/base16/monokai.css";
 import type { Post } from "~/models/post.server";
 import { getPost } from "~/models/post.server";
+import clsx from "clsx";
+import { Image } from "remix-image";
 
 type LoaderData = { post: Post; html: string };
 
@@ -41,16 +43,18 @@ export default function PostSlug() {
   const { post, html } = useLoaderData() as LoaderData;
 
   return (
-    <main className="mx-auto max-w-4xl py-20">
+    <main className={clsx("mx-10", "py-20 md:mx-auto md:max-w-4xl")}>
       <h1 className="my-6 border-b-2 text-center text-7xl font-bold dark:text-white">
         {post.title}
       </h1>
 
-      <div
-        className="prose prose-2xl dark:prose-invert"
-        id="mark"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className="flex flex-row">
+        <div
+          className="prose prose-lg dark:prose-invert md:prose-2xl"
+          id="mark"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
     </main>
   );
 }

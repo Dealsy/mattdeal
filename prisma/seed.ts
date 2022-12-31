@@ -48,6 +48,7 @@ async function seed() {
       slug: "my-first-post",
       title: "My First Post",
       category: "Remix",
+      image: "https://source.unsplash.com/random/800x600",
       markdown: `
   # This is my first post
   
@@ -55,11 +56,12 @@ async function seed() {
   Isn't it great?
       `.trim(),
     },
-    image: "https://source.unsplash.com/random/800x600",
+
     {
       slug: "90s-mixtape",
       title: "A Mixtape I Made Just For You",
       category: "React",
+      image: "https://source.unsplash.com/random/800x600",
       markdown: `
   # 90s Mixtape
  
@@ -83,7 +85,6 @@ async function seed() {
   - C'mon N' Ride it (Quad City DJ's)
       `.trim(),
     },
-    image: "https://source.unsplash.com/random/800x600",
   ];
 
   for (const post of posts) {
