@@ -6,7 +6,7 @@ export default function About() {
     <div
       className={clsx(
         "mx-10 flex text-2xl",
-        "py-20 dark:text-gray-200 md:mx-auto md:max-w-4xl md:flex-col md:gap-8"
+        "py-20 dark:text-gray-300 md:mx-auto md:max-w-4xl md:flex-col md:gap-8"
       )}
     >
       <div className="flex flex-row gap-5">
@@ -56,7 +56,7 @@ export default function About() {
       <p>
         I am also excited to share my frontend development{" "}
         <a
-          className="text-blue-200 hover:text-blue-300"
+          className="text-purple-400 hover:text-purple-500 dark:text-blue-200 dark:hover:text-blue-300"
           href="https://www.youtube.com/channel/UCt54LUGfJBgA2HU0eu_RXyg"
         >
           YouTube channel

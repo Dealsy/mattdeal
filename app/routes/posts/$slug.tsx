@@ -43,18 +43,16 @@ export default function PostSlug() {
   const { post, html } = useLoaderData() as LoaderData;
 
   return (
-    <main className={clsx("mx-10", "py-20 md:mx-auto md:max-w-4xl")}>
-      <h1 className="my-6 border-b-2 text-center text-7xl font-bold dark:text-white">
+    <main className={clsx("py-20 md:mx-auto md:max-w-4xl")}>
+      <h1 className="my-6 border-b-2 text-center text-5xl font-bold dark:text-white md:text-7xl">
         {post.title}
       </h1>
 
-      <div className="flex flex-row">
-        <div
-          className="prose prose-lg dark:prose-invert md:prose-2xl"
-          id="mark"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
+      <div
+        className="prose prose-lg mx-10 w-1/2 dark:prose-invert md:w-full md:prose-2xl"
+        id="mark"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </main>
   );
 }

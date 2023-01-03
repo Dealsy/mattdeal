@@ -20,12 +20,12 @@ export default function Nav() {
   return (
     <nav
       className={clsx(
-        "sticky top-0 z-10 flex flex-row items-center justify-between border-b-2 border-discord bg-white",
+        "sticky top-0 z-50 flex flex-row items-center justify-between border-b-2 border-discord bg-white",
         "p-6 dark:border-yellow-500 dark:bg-gray-700 dark:text-white"
       )}
     >
       <div className="flex flex-row gap-5">
-        <Link to="/" className="text-2xl font-bold">
+        <Link prefetch="intent" to="/" className="text-2xl font-bold">
           {user ? user.email : "Mattdeal.com.au"}
         </Link>
         <Button
@@ -41,15 +41,21 @@ export default function Nav() {
       <ul className="flex flex-row space-x-4">
         {admin ? (
           <li>
-            <Link to={"/posts/admin"}>Admin</Link>
+            <Link prefetch="intent" to={"/posts/admin"}>
+              Admin
+            </Link>
           </li>
         ) : null}
 
         <li>
-          <Link to="/posts">Blog</Link>
+          <Link prefetch="intent" to="/posts">
+            Blog
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link prefetch="intent" to="/about">
+            About
+          </Link>
         </li>
 
         {user ? (

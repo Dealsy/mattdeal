@@ -5,6 +5,7 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import Button from "~/components/reusable_components/Button";
 import Card from "~/components/reusable_components/card";
+import { useRef } from "react";
 
 type LoaderData = {
   // this is a handy way to say: "posts is whatever type getPosts resolves to"
@@ -20,6 +21,17 @@ export const loader = async () => {
 export default function Index() {
   // @ts-ignore
   const { posts } = useLoaderData() as LoaderData;
+
+  const cardElement = useRef<HTMLDivElement | null>(null);
+
+  const handleClick = () => {
+    if (cardElement.current) {
+      window.scrollTo({
+        top: cardElement.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <main
@@ -40,6 +52,7 @@ export default function Index() {
           I'm a Frontend Developer with a passion for helping people
         </h2>
         <Button
+          onClick={handleClick}
           text="Learn more"
           className={clsx(
             "rounded-lg p-4 text-3xl font-medium",
@@ -48,7 +61,7 @@ export default function Index() {
         />
       </div>
       <h2 className="font-semibold dark:text-white">Recent Posts</h2>
-      <div className="flex flex-row pb-24">
+      <div className="flex flex-row pb-24" ref={cardElement}>
         {[...posts]
           .reverse()
           .slice(0, 3)

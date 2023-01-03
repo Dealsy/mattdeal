@@ -30,7 +30,7 @@ export default function Card({ post }: { post: any }) {
         className={clsx(
           "m-10 flex h-[30rem] w-80 flex-col rounded-lg border-4 border-discord bg-gray-300 opacity-90 hover:border-dropbox dark:border-amazon",
           "relative shadow-xl",
-          "hover:scale-125 hover:shadow-2xl dark:hover:border-yellow-500"
+          "transition-all duration-300 hover:scale-125  hover:shadow-2xl dark:hover:border-yellow-500"
         )}
       >
         <div className="bg-gray-600 bg-opacity-70">
