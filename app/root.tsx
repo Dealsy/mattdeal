@@ -17,6 +17,7 @@ import clsx from "clsx";
 import Nav from "./components/nav";
 import { getEnv } from "./env.server";
 import Footer from "./components/footer";
+import MobileNav from "./components/mobileNav";
 
 export const links: LinksFunction = () => {
   return [
@@ -56,7 +57,13 @@ function App() {
         <Links />
       </head>
       <body className="h-full bg-gray-50 dark:bg-gray-700">
-        <Nav />
+        <div className="hidden sm:block">
+          <Nav />
+        </div>
+        <div className="md:hidden">
+          <MobileNav />
+        </div>
+
         <Outlet />
         <Footer />
         <ScrollRestoration />

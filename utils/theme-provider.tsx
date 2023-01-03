@@ -1,10 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef } from "react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
-
-enum Theme {
-  DARK = "dark",
-  LIGHT = "light",
-}
+import { Theme } from "types/types";
 
 type ThemeContextType = [Theme | null, Dispatch<SetStateAction<Theme>>];
 
