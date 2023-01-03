@@ -4,11 +4,15 @@ import clsx from "clsx";
 
 export default function Contact() {
   return (
-    <form className={clsx("mx-24 flex flex-col justify-center gap-5 pb-10")}>
+    <form
+      className={clsx(
+        "mx-14 flex flex-col justify-center gap-5 pb-10 md:mx-24"
+      )}
+    >
       <h3 className="text-black dark:text-white">Lets chat today</h3>
 
-      <Input labelName="Name" className="w-[17rem]" />
-      <Input labelName="Email" className="w-[17rem]" />
+      <Input labelName="Name" className="" />
+      <Input labelName="Email" className="" />
 
       <label id="description"> Description </label>
       <textarea

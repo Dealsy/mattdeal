@@ -15,7 +15,7 @@ export default function Socials({
   toggleTheme,
 }: SocialsProps) {
   return (
-    <div className="ml-20 flex flex-col gap-5">
+    <div className="mx-14 flex flex-col gap-5">
       <h3 className="text-black dark:text-white">Matt Deal </h3>
       <h6 className={clsx("text-gray-400 dark:text-gray-200")}>
         Follow me on these platforms{" "}

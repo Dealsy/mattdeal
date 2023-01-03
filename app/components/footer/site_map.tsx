@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 export default function Site_map() {
   return (
-    <div className="ml-[5.5rem] flex flex-col gap-5">
+    <div className="mx-14 flex flex-col gap-5">
       <h3 className="text-black dark:text-white">Sitemap</h3>
       <ul
         className={clsx(
