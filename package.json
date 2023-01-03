@@ -41,6 +41,7 @@
     "cloudinary": "^1.28.1",
     "cloudinary-core": "^2.13.0",
     "clsx": "^1.2.1",
+    "git-flow": "^0.2.0",
     "highlight.js": "^11.7.0",
     "isbot": "^3.6.3",
     "marked": "^4.2.3",
