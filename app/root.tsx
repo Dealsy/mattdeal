@@ -18,6 +18,7 @@ import Nav from "./components/nav";
 import { getEnv } from "./env.server";
 import Footer from "./components/footer";
 import MobileNav from "./components/mobileNav";
+import { useState } from "react";
 
 export const links: LinksFunction = () => {
   return [
@@ -45,6 +46,7 @@ export async function loader({ request }: LoaderArgs) {
 function App() {
   const data = useLoaderData();
   const [theme] = useTheme();
+  const [open, setOpen] = useState(false);
 
   if (!theme) {
     return <div> loading.. </div>;
@@ -61,7 +63,7 @@ function App() {
           <Nav />
         </div>
         <div className="md:hidden">
-          <MobileNav />
+          <MobileNav open={open} setOpen={setOpen} />
         </div>
 
         <Outlet />
