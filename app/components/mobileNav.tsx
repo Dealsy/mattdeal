@@ -88,9 +88,15 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
                             aria-hidden="true"
                           >
                             <div className="flex flex-col gap-5 p-10 text-6xl text-gray-900 dark:text-white">
-                              <Link to="/">Home</Link>
-                              <Link to="/posts">Blog</Link>
-                              <Link to="/about">About</Link>
+                              <Link onClick={() => setOpen(false)} to="/">
+                                Home
+                              </Link>
+                              <Link onClick={() => setOpen(false)} to="/posts">
+                                Blog
+                              </Link>
+                              <Link onClick={() => setOpen(false)} to="/about">
+                                About
+                              </Link>
                             </div>
                             <div className="flex flex-row gap-2 ">
                               <ArrowLeftOnRectangleIcon className="absolute left-10 bottom-8 h-14 w-14  text-red-500" />
