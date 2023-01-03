@@ -181,7 +181,10 @@ export default function Join() {
               Anyone who signs up prior to the course release will revice a 10%
               discount!
             </p>
-            <p> You'll see your name displayed at the top of the page, yay!</p>
+            <p>
+              {" "}
+              You will also see your name displayed at the top of the page, yay!
+            </p>
           </div>
         </div>
       </div>
