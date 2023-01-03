@@ -20,7 +20,7 @@ export default function Nav() {
   return (
     <nav
       className={clsx(
-        "sticky top-0 z-50 flex flex-row items-center justify-between border-b-2 border-discord bg-white",
+        "flex flex-row items-center justify-between border-b-2 border-discord bg-white",
         "p-6 dark:border-yellow-500 dark:bg-gray-700 dark:text-white"
       )}
     >

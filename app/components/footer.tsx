@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import clsx from "clsx";
 
 import { SocialIcon } from "react-social-icons";
@@ -68,7 +69,7 @@ export default function Footer() {
             "text-gray-400 dark:text-gray-200"
           )}
         >
-          <li>Home</li>
+          <Link to="/">Home</Link>
           <li>About</li>
           <li>Blog</li>
         </ul>
