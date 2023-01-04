@@ -30,7 +30,7 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
 
   return (
     <>
-      <div className="flex flex-row justify-between border-2 border-b-discord dark:border-b-amazon">
+      <div className="flex flex-row justify-between border-b-2 border-b-discord dark:border-b-amazon">
         <Link
           prefetch="intent"
           to="/"

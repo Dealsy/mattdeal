@@ -8,7 +8,6 @@ import "highlight.js/styles/base16/monokai.css";
 import type { Post } from "~/models/post.server";
 import { getPost } from "~/models/post.server";
 import clsx from "clsx";
-import { Image } from "remix-image";
 
 type LoaderData = { post: Post; html: string };
 
@@ -17,15 +16,6 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const post = await getPost(params.slug);
   invariant(post, `Post not found: ${params.slug}`);
-
-  // const options = {
-  //   highlight: function (code: any, language: any) {
-  //     const validLanguage = hljs.getLanguage(language) ? language : "plaintext";
-
-  //     console.log("validLanguage", validLanguage);
-  //     return hljs.highlight(validLanguage, code).value;
-  //   },
-  // };
 
   marked.setOptions({
     langPrefix: "hljs language-",
