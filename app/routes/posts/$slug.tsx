@@ -43,7 +43,7 @@ export default function PostSlug() {
   const { post, html } = useLoaderData() as LoaderData;
 
   return (
-    <main className={clsx("py-20 md:mx-auto md:max-w-4xl")}>
+    <main className={clsx("mx-10 py-20 md:mx-auto md:max-w-4xl")}>
       <h1 className="my-6 mx-5 border-b-2 text-center text-5xl font-bold dark:text-white md:text-7xl">
         {post.title}
       </h1>
