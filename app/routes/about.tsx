@@ -48,7 +48,7 @@ export default function About() {
         <Image
           className="rounded-2xl transition-all duration-500 hover:scale-125"
           alt="motorbike"
-          src="bike.JPG"
+          src="bike.jpg"
           width={1800}
         />
       </div>
