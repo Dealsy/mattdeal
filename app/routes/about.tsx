@@ -5,17 +5,17 @@ export default function About() {
   return (
     <div
       className={clsx(
-        "mx-10 flex text-2xl",
-        "py-20 dark:text-gray-300 md:mx-auto md:max-w-4xl md:flex-col md:gap-8"
+        "mx-10 flex flex-col text-2xl",
+        " py-20 dark:text-gray-300 md:mx-auto md:max-w-4xl md:gap-8"
       )}
     >
-      <div className="flex flex-row gap-5">
+      <div className="gap flex flex-col md:flex-row">
         <Image
           src="matt.jpg"
           alt="Matt Deal"
           width={500}
           height={500}
-          className="rounded-3xl transition-all duration-500 hover:scale-125"
+          className="rounded-3xl transition-all duration-500 hover:scale-125 md:m-3"
         />
         <div className="flex flex-col gap-5">
           <p>
@@ -34,7 +34,7 @@ export default function About() {
         for ways to balance my passion for coding with my role as a parent.
       </p>
 
-      <div className="flex flex-row gap-5">
+      <div className="mb-5 flex flex-col gap-5 md:mb-0 md:flex-row">
         <div className="flex flex-col gap-5">
           <p>
             In my free time, I love hitting the open road on my 2008 ZX6r

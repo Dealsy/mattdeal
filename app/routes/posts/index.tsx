@@ -55,7 +55,7 @@ export default function Posts() {
   }, [termSearch, catSearch]);
 
   return (
-    <main className="flex flex-col p-14 dark:bg-gray-700">
+    <main className="flex flex-col dark:bg-gray-700 md:p-14">
       {adminUser ? (
         <Link
           to="admin"
@@ -68,16 +68,16 @@ export default function Posts() {
           Admin
         </Link>
       ) : null}
-      <h1 className="m-10 ml-10 flex justify-center text-5xl font-medium dark:text-white">
+      <h1 className="mb-10 flex text-5xl font-medium dark:text-white md:m-10 md:mb-0 md:ml-10 md:justify-center">
         All Posts
       </h1>
 
-      <div className="flex flex-row justify-between px-28">
+      <div className="flex flex-col justify-between gap-5 md:flex-row md:px-28">
         <input
           placeholder="Search for a blog"
           type="text"
           className={clsx(
-            "w-96 border-b-2 border-gray-400 px-2 text-xl placeholder-slate-500 outline-none",
+            "border-b-2 border-gray-400 px-2 text-xl placeholder-slate-500 outline-none md:w-96",
             "dark:bg-gray-700 dark:text-white dark:placeholder-gray-200"
           )}
           onChange={(e) => setSearch(e.target.value)}
@@ -90,7 +90,7 @@ export default function Posts() {
             Select a category
           </label>
           <select
-            className="rounded-lg border-2 border-gray-800 p-2"
+            className="w-44 rounded-lg border-2 border-gray-800 p-2 md:w-full"
             id="select"
             onChange={(e) => selectedValue(e.target.value)}
           >
@@ -105,7 +105,7 @@ export default function Posts() {
           </select>
         </div>
       </div>
-      <div className="flex flex-row flex-wrap p-10">
+      <div className="flex flex-col md:flex-row md:flex-wrap md:p-10">
         {[...combinedFilter].reverse().map((post) => (
           <Card key={post.slug} post={post} />
         ))}
