@@ -16,7 +16,7 @@ export default function Header({ handleClick }: HeaderProps) {
       >
         Helping people make the world a better place through code
       </h1>
-      <div className="mb-24 flex flex-col gap-20 pb-80">
+      <div className="mb-24 flex flex-col gap-20 pb-40">
         <h2 className="lead-[3rem] text-3xl text-gray-800 dark:text-gray-400 md:text-4xl md:leading-[4rem]">
           I'm a Frontend Developer with a passion for helping people
         </h2>

@@ -94,7 +94,7 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         <div className="absolute inset-0 px-4 sm:px-6">
                           <div
-                            className="h-full border-2 border-discord  text-center dark:border-amazon"
+                            className="h-full border-2 border-discord  text-left dark:border-amazon"
                             aria-hidden="true"
                           >
                             <div className="flex flex-col gap-5 p-10 text-6xl text-gray-900 dark:text-white">
@@ -120,7 +120,7 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
                                 <div className="flex flex-col">
                                   <Link
                                     onClick={() => setOpen(false)}
-                                    className="absolute bottom-20 left-14 px-10 text-5xl"
+                                    className="absolute bottom-20 px-10 text-5xl"
                                     to="/login"
                                   >
                                     {" "}
@@ -128,7 +128,7 @@ export default function MobileNav({ open, setOpen }: MobileNavProps) {
                                   </Link>
                                   <Link
                                     onClick={() => setOpen(false)}
-                                    className="absolute bottom-5 left-8 px-10 text-5xl"
+                                    className="absolute bottom-5 px-10 text-5xl"
                                     to="/join"
                                   >
                                     Sign up
