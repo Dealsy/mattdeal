@@ -16,7 +16,7 @@ export default function Header({ handleClick }: HeaderProps) {
       >
         Helping people make the world a better place through code
       </h1>
-      <div className="mb-24 flex flex-col gap-20 pb-40">
+      <div className="mb-32 flex flex-col gap-20 pb-40">
         <h2 className="lead-[3rem] text-3xl text-gray-800 dark:text-gray-400 md:text-4xl md:leading-[4rem]">
           I'm a Frontend Developer with a passion for helping people
         </h2>
@@ -24,7 +24,7 @@ export default function Header({ handleClick }: HeaderProps) {
           onClick={handleClick}
           text="Learn more"
           className={clsx(
-            "rounded-lg p-4 text-3xl font-medium",
+            "m-auto w-1/3 rounded-lg p-4 text-3xl font-medium",
             "dark:bg-amazon dark:text-white dark:hover:bg-yellow-500"
           )}
         />

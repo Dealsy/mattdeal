@@ -46,7 +46,7 @@ export default function Index() {
       <div className="flex flex-row justify-between">
         <h2 className="p-5 font-semibold dark:text-white">Recent Posts</h2>
         <Link
-          className="mt-6 text-2xl font-medium text-discord underline dark:text-amazon"
+          className="mt-6 text-2xl font-medium text-purple-400 underline hover:text-purple-500 dark:text-blue-200 dark:hover:text-blue-300 "
           to="/posts"
         >
           All Posts

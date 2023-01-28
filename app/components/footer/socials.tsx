@@ -1,19 +1,12 @@
 import clsx from "clsx";
 import { SocialIcon } from "react-social-icons";
-import Button from "../reusable_components/Button";
 import type { Theme } from "types/types";
 
 type SocialsProps = {
   theme: Theme | null;
-  themeToggole: boolean;
-  toggleTheme: () => void;
 };
 
-export default function Socials({
-  theme,
-  themeToggole,
-  toggleTheme,
-}: SocialsProps) {
+export default function Socials({ theme }: SocialsProps) {
   return (
     <div className="mx-14 flex flex-col gap-5">
       <h3 className="text-black dark:text-white">Matt Deal </h3>
@@ -42,15 +35,6 @@ export default function Socials({
           bgColor={theme === "dark" ? "#000" : "#6366f1"}
         />
       </div>
-      <Button
-        text={themeToggole ? "Light" : "Dark"}
-        className={clsx(
-          "mr-[12.5rem] rounded-md bg-discord p-2 text-white ",
-          "hover:scale-105 hover:bg-dropbox",
-          "dark:bg-amazon dark:hover:bg-yellow-500"
-        )}
-        onClick={toggleTheme}
-      />
     </div>
   );
 }

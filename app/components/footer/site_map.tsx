@@ -13,7 +13,7 @@ export default function Site_map() {
       >
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/post">Blog</Link>
+        <Link to="/posts">Blog</Link>
       </ul>
     </div>
   );

@@ -23,8 +23,10 @@ export default function Mission({ cardElement }: MissionProps) {
         </p>
       </div>
 
-      <h2 className="text-4xl font-medium text-gray-300">Who Am I?</h2>
-      <div className="flex flex-col gap-5 text-xl text-gray-300 md:text-2xl">
+      <h2 className="text-4xl font-medium text-gray-600 dark:text-gray-300">
+        Who Am I?
+      </h2>
+      <div className="flex flex-col gap-5 text-xl text-gray-600 dark:text-gray-300 md:text-2xl">
         <p>
           My name is Matt Deal I am a Frontend Developer with a passion for
           helping people.
